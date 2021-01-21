@@ -4,11 +4,7 @@ ELK (Elastic Search, Logstash and Kibana) stack with kubernetes and minikube
 ### Pre-requisite
 
 - Docker
-
-- VirtualBox
-
 - Minikube or any existing kubernetes cluster(aws, gce etc.) up and connected via kubectl
-
 
 
 
@@ -35,7 +31,7 @@ Uncomment/edit the appropriate containers deployment file under kubernetes folde
 
 ### Test (on Minkube local cluster)
 
-- Run `minikube dashboard` and view logs from all the components (in case of GCE Stackdriver is automatically configured othervise id probably configure grafana against prometheus for multi-cloud support). With the current setup it sees all 3 logstash nodes as 1 container - i would put effort into spliting those if run in k8s.
+- Run `minikube dashboard` and view logs from all the components (in case of GCE Stackdriver is automatically configured. Othervise id probably configure grafana against prometheus for multi-cloud support). With the current setup it sees all 3 logstash nodes as 1 container - i would put effort into spliting those if run in k8s.
 
 - Run `minikube service kibana`, this will open kibana dashboard in browser - In case of production k8s this would be replaced with k8s ingress resource witch would also hold SSL between k8s cluster and CDN.
 	- Default `username:password = elastic:changeme`
